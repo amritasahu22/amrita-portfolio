@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Amrita Sahu — Digital Content Editor</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Fraunces:ital,wght@0,300;0,600;1,300&display=swap"
+			rel="stylesheet"
+		/>
+		<link rel="stylesheet" href="style.css" />
+		<style>
+			/* LIGHTBOX */
+			/* LIGHTBOX */
+			.lightbox-overlay {
+				display: none;
+				position: fixed;
+				inset: 0;
+				background: rgba(0, 0, 0, 0.88);
+				z-index: 1000;
+				overflow-y: auto;
+				padding: 4rem 2rem 2rem;
+			}
+			.lightbox-overlay.active {
+				display: block;
+			}
+			.lightbox-content {
+				display: flex;
+				justify-content: center;
+				align-items: flex-start;
+				min-height: 100%;
+				cursor: default;
+			}
+			.lightbox-overlay img {
+				/* Wide images: fill viewport width */
+				/* Tall images: cap at viewport height and scroll */
+				max-width: 92vw;
+				width: auto;
+				height: auto;
+				max-height: none;
+				border-radius: 6px;
+				box-shadow: 0 8px 48px rgba(0, 0, 0, 0.6);
+				display: block;
+				margin: 0 auto;
+				cursor: default;
+			}
+			.lightbox-close {
+				position: fixed;
+				top: 1rem;
+				right: 1.5rem;
+				color: white;
+				font-size: 1.5rem;
+				font-weight: 600;
+				cursor: pointer;
+				opacity: 0.9;
+				z-index: 1001;
+				background: rgba(0, 0, 0, 0.5);
+				width: 2.2rem;
+				height: 2.2rem;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				border-radius: 50%;
+				line-height: 1;
+			}
+			.lightbox-close:hover {
+				opacity: 1;
+				background: rgba(0, 0, 0, 0.8);
+			}
+			.lightbox-hint {
+				position: fixed;
+				bottom: 1.25rem;
+				left: 50%;
+				transform: translateX(-50%);
+				color: rgba(255, 255, 255, 0.5);
+				font-size: 0.72rem;
+				letter-spacing: 0.05em;
+				pointer-events: none;
+				z-index: 1001;
+			}
+			.project-image {
+				cursor: zoom-in;
+			}
+			.project-image img {
+				pointer-events: none;
+			}
+		</style>
+	</head>
+	<body>
+		<!-- LIGHTBOX OVERLAY -->
+		<div class="lightbox-overlay" id="lightbox">
+			<span class="lightbox-close" onclick="closeLightbox()">&times;</span>
+			<div class="lightbox-content" onclick="closeLightbox()">
+				<img
+					id="lightbox-img"
+					src=""
+					alt=""
+					onclick="event.stopPropagation()"
+				/>
+			</div>
+			<p class="lightbox-hint">Press Esc or click outside to close</p>
+		</div>
+
+		<!-- HEADER -->
+		<header>
+			<div class="header-inner">
+				<div class="header-name">
+					<span class="name-display">Amrita Sahu</span>
+					<span class="title-display">Digital Content Editor</span>
+				</div>
+				<nav>
+					<a href="mailto:amritasahu22@gmail.com">Contact</a>
+					<a href="https://github.com/amritasahu22" target="_blank">GitHub</a>
+					<a href="https://linkedin.com/in/amritasahu" target="_blank"
+						>LinkedIn</a
+					>
+				</nav>
+			</div>
+		</header>
+
+		<!-- HERO -->
+		<section class="hero">
+			<div class="hero-inner">
+				<h1>
+					<strong>Amrita Sahu</strong><br />
+					<em>Digital Content Editor</em>
+				</h1>
+				<p class="hero-sub">
+					11 years building customer-facing web and digital products. Now
+					bringing that technical foundation to digital content publishing,
+					quality, and the details that make online experiences accurate,
+					accessible, and trustworthy.
+				</p>
+				<div class="hero-tags">
+					<span>HTML & CSS</span>
+					<span>CMS Publishing</span>
+					<span>AEM (Basic)</span>
+					<span>UAT Testing</span>
+					<span>Accessibility</span>
+					<span>Browser Testing</span>
+					<span>Web & Mobile</span>
+					<span>Attention to Detail</span>
+				</div>
+			</div>
+		</section>
+
+		<!-- PROJECTS -->
+		<section class="projects">
+			<div class="projects-inner">
+				<p class="section-label">Relevant Projects</p>
+
+				<!-- Project 1 -->
+				<article class="project">
+					<div
+						class="project-image"
+						data-full="images/neoverix_landing_page_desktop.png"
+					>
+						<img
+							src="images/neoverix_thumbnail.png"
+							alt="NeoVeriX landing page screenshot"
+						/>
+						<p class="zoom-hint"><strong>Click to enlarge</strong></p>
+					</div>
+					<div class="project-details">
+						<p class="project-tag">Personal Project</p>
+						<h2>NeoveriX</h2>
+						<p class="project-desc">
+							A business verification platform for Australian SMEs and
+							charities. Designed and built end-to-end from content strategy and
+							copywriting through to HTML/CSS implementation. Every element was
+							crafted to communicate trust clearly to a non-technical audience.
+						</p>
+						<ul class="project-highlights">
+							<li>Structured content hierarchy for customer clarity</li>
+							<li>Wrote and edited all page copy</li>
+							<li>Built responsive layout in HTML & CSS</li>
+							<li>Designed in Figma, implemented from scratch</li>
+						</ul>
+						<div class="project-tech">
+							<span>HTML</span><span>CSS</span><span>Figma</span
+							><span>Content Publishing</span>
+						</div>
+					</div>
+				</article>
+
+				<!-- Project 2 -->
+				<article class="project project-reverse">
+					<div class="project-image">
+						<img
+							src="images/iconic_homepage_desktop.png"
+							alt="The Iconic website screenshot"
+						/>
+						<p class="zoom-hint">Click to enlarge</p>
+					</div>
+					<div class="project-details">
+						<p class="project-tag">The Iconic</p>
+						<h2>Homepage & Product Pages</h2>
+						<p class="project-desc">
+							Contributed to the delivery of customer-facing homepage, product
+							and category pages at one of Australia's largest fashion
+							e-commerce platforms. Worked across a fast-paced production
+							environment ensuring content accuracy, consistency, and quality
+							across web and mobile.
+						</p>
+						<ul class="project-highlights">
+							<li>Built and maintained product listing and detail pages</li>
+							<li>Ensured content accuracy and brand consistency</li>
+							<li>Cross-browser and responsive testing</li>
+							<li>Collaborated with design and product teams on launches</li>
+						</ul>
+						<div class="project-tech">
+							<span>HTML</span><span>CSS</span><span>Prismic CMS</span
+							><span>UAT Testing</span>
+						</div>
+					</div>
+				</article>
+
+				<!-- Project 3 -->
+				<article class="project">
+					<div class="project-image">
+						<img
+							src="images/iconic_promotional_banner_campaign.png"
+							alt="Iconic Promotional Banner & Campaign Content"
+						/>
+						<p class="zoom-hint">Click to enlarge</p>
+					</div>
+					<div class="project-details">
+						<p class="project-tag">The Iconic</p>
+						<h2>Promotional Content & Campaign Execution</h2>
+						<p class="project-desc">
+							Designed and built a promotional campaign banner for The Iconic's
+							Winter Frenzy sale. Implemented countdown timer component, ensured
+							content accuracy across the banner, and coordinated delivery
+							within a fast-paced campaign timeline.
+						</p>
+						<ul class="project-highlights">
+							<li>Built promotional banner with live countdown timer</li>
+							<li>Ensured content accuracy and brand consistency</li>
+							<li>Coordinated delivery within campaign go-live deadline</li>
+							<li>Tested across browsers and devices before launch</li>
+						</ul>
+						<div class="project-tech">
+							<span>Prismic CMS</span><span>HTML</span><span>CSS</span
+							><span>Accessibility</span>
+						</div>
+					</div>
+				</article>
+			</div>
+		</section>
+
+		<!-- ABOUT -->
+		<section class="about">
+			<div class="about-inner">
+				<p class="section-label">About</p>
+				<div class="about-grid">
+					<div class="about-text">
+						<p>
+							I bring a frontend engineering background to digital content work
+							which means I understand how pages are built, why content
+							structure matters, and what it takes to ship accurate, accessible
+							digital experiences in a production environment.
+						</p>
+						<p>
+							Beyond my professional work, I volunteer at Karabi Community
+							Services teaching digital literacy to seniors, a reminder that
+							clear, accessible digital content isn't just good practice, it's
+							essential for real people.
+						</p>
+					</div>
+					<div class="about-skills">
+						<div class="skill-group">
+							<p class="skill-label">Content & Publishing</p>
+							<p>
+								CMS Publishing · Web Content Management · Content QA · Digital
+								Accuracy
+							</p>
+						</div>
+						<div class="skill-group">
+							<p class="skill-label">Testing & Quality</p>
+							<p>
+								UAT Testing · Browser Compatibility · Accessibility Checks ·
+								Incident Support
+							</p>
+						</div>
+						<div class="skill-group">
+							<p class="skill-label">Technical</p>
+							<p>
+								HTML · CSS · Figma · Prismic CMS · AEM (Basic) · Web & Mobile
+								Platforms
+							</p>
+						</div>
+						<div class="skill-group">
+							<p class="skill-label">Experience</p>
+							<p>
+								The Iconic · Transport for NSW · MUFG · IBM · HSBC · Westpac
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- FOOTER -->
+		<footer>
+			<div class="footer-inner">
+				<p>Crafting digital experiences that matter</p>
+				<p>@2026 All rights reserved.</p>
+				<div class="footer-links">
+					<a href="mailto:amritasahu22@gmail.com">amritasahu22@gmail.com</a>
+					<a href="https://github.com/amritasahu22" target="_blank">GitHub</a>
+					<a href="https://linkedin.com/in/amritasahu" target="_blank"
+						>LinkedIn</a
+					>
+				</div>
+			</div>
+		</footer>
+
+		<script>
+			function openLightbox(src, alt) {
+				document.getElementById('lightbox-img').src = src;
+				document.getElementById('lightbox-img').alt = alt;
+				document.getElementById('lightbox').classList.add('active');
+				document.body.style.overflow = 'hidden';
+			}
+
+			function closeLightbox() {
+				document.getElementById('lightbox').classList.remove('active');
+				document.body.style.overflow = '';
+			}
+
+			document.addEventListener('DOMContentLoaded', () => {
+				document.querySelectorAll('.project-image').forEach(el => {
+					el.addEventListener('click', () => {
+						const img = el.querySelector('img');
+						const fullSrc = el.getAttribute('data-full') || img.src;
+						openLightbox(fullSrc, img.alt);
+					});
+				});
+			});
+
+			document.addEventListener('keydown', e => {
+				if (e.key === 'Escape') closeLightbox();
+			});
+		</script>
+	</body>
+</html>
