@@ -9,4 +9,4 @@ Skills
 HTML · CSS · Prismic CMS · AEM (Basic) · UAT Testing · Accessibility · Web Publishing
 
 Live Site
-🔗
+🔗 https://amritasahu22.github.io/amrita-portfolio/

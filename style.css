@@ -183,7 +183,7 @@ nav a:hover {
 .hero-sub {
 	font-size: 1.05rem;
 	color: var(--ink-light);
-	max-width: 560px;
+	max-width: 800px;
 	line-height: 1.7;
 	margin-bottom: 2.5rem;
 }
@@ -403,6 +403,13 @@ footer p {
 .footer-links a:hover {
 	color: var(--white);
 	text-decoration: none;
+}
+.skill-sep {
+	color: var(--green-mid);
+	font-size: 1.2rem;
+	font-weight: 700;
+	margin: 0 0.3rem;
+	vertical-align: middle;
 }
 
 /* ─── RESPONSIVE ─────────────────────────────────────── */
